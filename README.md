@@ -64,3 +64,11 @@ The **Tourism Management System** is designed to simplify and automate the manag
    git clone <repo_url>
    cd TourismManagementSystem
 
+## Authors :
+1) Nandakumar T - PES1UG22CS375
+
+2) P. Ashish - PES1UG22CS404
+
+3) Prajwal N. P - PES1UG22CS423
+
+4) Pavan T. R - PES1UG22CS411
