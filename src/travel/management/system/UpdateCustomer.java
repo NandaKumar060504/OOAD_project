@@ -98,19 +98,38 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         t7.setBounds(180, 370, 200, 25);
         this.add(t7);
 
-        b1 = new JButton("Update");
-        b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.WHITE);
-        b1.setBounds(70, 430, 100, 25);
-        b1.addActionListener(this);
-        this.add(b1);
+        // b1 = new JButton("Update");
+        // b1.setBackground(Color.BLACK);
+        // b1.setForeground(Color.WHITE);
+        // b1.setBounds(70, 430, 100, 25);
+        // b1.addActionListener(this);
+        // this.add(b1);
 
-        b2 = new JButton("Back");
-        b2.setBackground(Color.BLACK);
-        b2.setForeground(Color.WHITE);
-        b2.setBounds(220, 430, 100, 25);
-        b2.addActionListener(this);
-        this.add(b2);
+        // b2 = new JButton("Back");
+        // b2.setBackground(Color.BLACK);
+        // b2.setForeground(Color.WHITE);
+        // b2.setBounds(220, 430, 100, 25);
+        // b2.addActionListener(this);
+        // this.add(b2);
+        b1 = new JButton("Update");
+b1.setBackground(Color.BLACK);
+b1.setForeground(Color.WHITE);
+b1.setBounds(70, 430, 100, 25);
+b1.setOpaque(true);
+b1.setBorderPainted(false);
+b1.setFocusPainted(false);
+b1.addActionListener(this);
+this.add(b1);
+
+b2 = new JButton("Back");
+b2.setBackground(Color.BLACK);
+b2.setForeground(Color.WHITE);
+b2.setBounds(220, 430, 100, 25);
+b2.setOpaque(true);
+b2.setBorderPainted(false);
+b2.setFocusPainted(false);
+b2.addActionListener(this);
+this.add(b2);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/update.png"));
         Image i2 = i1.getImage().getScaledInstance(400, 400, Image.SCALE_DEFAULT);
@@ -121,17 +140,27 @@ public class UpdateCustomer extends JFrame implements ActionListener {
 
         try {
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("SELECT * FROM account WHERE username = '"+username+"'");
+            // ResultSet rs = c.s.executeQuery("SELECT * FROM account WHERE username = '"+username+"'");
+            ResultSet rs = c.s.executeQuery("SELECT * FROM customer WHERE username = '"+username+"'");
             while (rs.next()) {
+                // t1.setText(rs.getString("username"));
+                // t2.setText(rs.getString("id"));
+                // t3.setText(rs.getString("number"));
+                // t4.setText(rs.getString("name"));
+                // t5.setText(rs.getString("gender"));
+                // t6.setText(rs.getString("country"));
+                // t7.setText(rs.getString("address"));
+                // t7.setText(rs.getString("phone"));
+                // t9.setText(rs.getString("email"));
                 t1.setText(rs.getString("username"));
-                t2.setText(rs.getString("id"));
-                t3.setText(rs.getString("number"));
-                t4.setText(rs.getString("name"));
-                t5.setText(rs.getString("gender"));
-                t6.setText(rs.getString("country"));
-                t7.setText(rs.getString("address"));
-                t7.setText(rs.getString("phone"));
-                t9.setText(rs.getString("email"));
+                t8.setText(rs.getString("id"));
+                t2.setText(rs.getString("number"));
+                t3.setText(rs.getString("name"));
+                t9.setText(rs.getString("gender"));
+                t4.setText(rs.getString("country"));
+                t5.setText(rs.getString("address"));
+                t6.setText(rs.getString("phone"));
+                t7.setText(rs.getString("email"));
             }
 
         } catch (SQLException e) {
@@ -141,21 +170,33 @@ public class UpdateCustomer extends JFrame implements ActionListener {
 
     public void actionPerformed (ActionEvent ae) {
 
+        // String username = t1.getText();
+        // String id = t2.getText();
+        // String number = t3.getText();
+        // String name = t4.getText();
+        // String gender = t5.getText();
+        // String country = t6.getText();
+        // String address = t7.getText();
+        // String phone = t8.getText();
+        // String email = t9.getText();
         String username = t1.getText();
-        String id = t2.getText();
-        String number = t3.getText();
-        String name = t4.getText();
-        String gender = t5.getText();
-        String country = t6.getText();
-        String address = t7.getText();
-        String phone = t8.getText();
-        String email = t9.getText();
+String id = t8.getText();
+String number = t2.getText();
+String name = t3.getText();
+String gender = t9.getText();
+String country = t4.getText();
+String address = t5.getText();
+String phone = t6.getText();
+String email = t7.getText();
 
         if (ae.getSource() == b1) {
 
-            String q = "UPDATE customer set username = '"+username+"', id = '"+id+"', number = '"+number+"'," +
-                    "name = '"+name+"', gender = '"+gender+"', country = '"+country+"', address = '"+address+"'," +
-                    "phone = '"+phone+"', email = '"+email+"')";
+            // String q = "UPDATE customer set username = '"+username+"', id = '"+id+"', number = '"+number+"'," +
+            //         "name = '"+name+"', gender = '"+gender+"', country = '"+country+"', address = '"+address+"'," +
+            //         "phone = '"+phone+"', email = '"+email+"')";
+         String q = "UPDATE customer set username = '"+username+"', id = '"+id+"', number = '"+number+"'," +
+        "name = '"+name+"', gender = '"+gender+"', country = '"+country+"', address = '"+address+"'," +
+        "phone = '"+phone+"', email = '"+email+"' WHERE username = '"+username+"'";
             try {
                 Conn c = new Conn();
                 c.s.executeUpdate(q);

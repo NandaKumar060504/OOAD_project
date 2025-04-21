@@ -89,12 +89,21 @@ public class ViewCustomer extends JFrame implements ActionListener {
         l19.setBounds(690, 230, 150, 25);
         this.add(l19);
 
+        // b = new JButton("Back");
+        // b.setBackground(Color.BLACK);
+        // b.setForeground(Color.WHITE);
+        // b.setBounds(350, 350, 100, 25);
+        // b.addActionListener(this);
+        // this.add(b);
         b = new JButton("Back");
-        b.setBackground(Color.BLACK);
-        b.setForeground(Color.WHITE);
-        b.setBounds(350, 350, 100, 25);
-        b.addActionListener(this);
-        this.add(b);
+b.setBackground(Color.BLACK);
+b.setForeground(Color.WHITE);
+b.setBounds(350, 350, 100, 25);
+b.setOpaque(true);          // Make the button opaque
+b.setBorderPainted(false);  // Remove default border
+b.setFocusPainted(false);   // Remove focus painting
+b.addActionListener(this);
+this.add(b);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/viewall.jpg"));
         Image i2 = i1.getImage().getScaledInstance(600, 200, Image.SCALE_DEFAULT);
