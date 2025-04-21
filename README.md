@@ -63,6 +63,8 @@ The **Tourism Management System** is designed to simplify and automate the manag
    ```bash
    git clone <repo_url>
    cd TourismManagementSystem
+## Guide :
+Dr. Bhargavi Mokashi
 
 ## Authors :
 1) Nandakumar T - PES1UG22CS375
